@@ -76,7 +76,7 @@ class App extends Component {
       testmsg: 'thisisatesttoverifydecryption',
       showSaveBox: false,
       addCLick: '',
-      teamname:'jjjjjjj'
+      teamname:''
     }
 
     // Helper variables
@@ -123,8 +123,7 @@ class App extends Component {
       'lime',
       'yellow',
       'amber',
-      'orange',
-      // url(https://image.shutterstock.com/image-photo/mountains-during-sunset-beautiful-natural-260nw-407021107.jpg),
+      'orange'
     ]
     /*this.setState({
       theme:opts[Math.round(Math.random() * opts.length)],
@@ -732,7 +731,7 @@ class App extends Component {
             <Fab
               style={{background:lightBlue['A400'], color:'#ffffff', zIndex:6, boxShadow:'none'}}
               onClick={() => {this.handleAddPoint(), this.setState({addCLick: 'rectangle'})}}>
-              <Crop169Icon />
+              <AddIcon />
             </Fab>
           </div>
           <div style={{paddingBottom:3}}>
