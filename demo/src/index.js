@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import './index.css';
 import Navigation from '../../Components/Navigation/Navigation';
+import {storage} from "./firebase/firebase";
 
 import { postToDB, getDB } from './DBhandler.js';
 import {
@@ -50,6 +51,9 @@ import SignIn from "../../Components/SignIn/Signin";
 
 
 var htmlToImage = require('html-to-image');
+
+
+
 
 // Main example
 class App extends Component {
