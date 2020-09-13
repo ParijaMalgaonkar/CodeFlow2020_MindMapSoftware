@@ -63,7 +63,9 @@
   "dependencies": {
     "firebase": "^7.20.0",
     "react": "16.13.1",
+    "react-particles-js": "^3.3.0",
     "react-router": "5.2.0",
-    "react-router-dom": "^5.2.0"
+    "react-router-dom": "^5.2.0",
+    "tachyons": "^4.12.0"
   }
 }

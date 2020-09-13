@@ -13,11 +13,7 @@ export const AuthProvider = ({ children }) => {
       setPending(false)
     });
   }, []);
-
-  if(pending){
-    return <>Loading...</>
-  }
-
+  
   return (
     <AuthContext.Provider
       value={{

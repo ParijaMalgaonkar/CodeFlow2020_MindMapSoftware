@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import './index.css';
-import Navigation from '../../Components/Navigation/Navigation';
+import Navigation from './Navigation';
+import 'tachyons';
+// import Particles from 'react-particles-js';
 
 
 import { postToDB, getDB } from './DBhandler.js';
@@ -47,13 +49,11 @@ import deepPurple from '@material-ui/core/colors/deepPurple';
 import lightBlue from '@material-ui/core/colors/lightBlue';
 
 import { Flowspace, Flowpoint } from '../../src';
-import SignIn from "../../Components/SignIn/Signin";
+import SignIn from "./Signin";
+import Login from "./Login";
 
 
 var htmlToImage = require('html-to-image');
-
-
-
 
 // Main example
 class App extends Component {
@@ -679,10 +679,10 @@ class App extends Component {
   render() {
     return (
       <MuiThemeProvider theme={darktheme}>
-        <div className='mainbody'>
-          <Navigation />
-        </div>
-
+        <Router>
+          <Route exact path = "/Login" component = {Login} />
+         
+         <IndexRoute component = {Login} />
         <div>
           <Flowspace
             theme={this.state.theme}
@@ -730,7 +730,7 @@ class App extends Component {
             }
           </Flowspace>
         </div>
-
+        </Router>
         {
           this.state.showInfobox ? this.infoBox() : this.settingsBox()
         }
@@ -796,4 +796,4 @@ class App extends Component {
 
 
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<Login />, document.getElementById('root'));
