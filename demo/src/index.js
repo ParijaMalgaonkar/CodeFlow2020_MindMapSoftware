@@ -48,7 +48,6 @@ import { Flowspace, Flowpoint } from '../../src';
 
 
 var htmlToImage = require('html-to-image');
-var addclick;
 
 // Main example
 class App extends Component {
@@ -75,7 +74,9 @@ class App extends Component {
       snackColor: blue[500],
       doFocus: false,
       testmsg: 'thisisatesttoverifydecryption',
-      showSaveBox: false
+      showSaveBox: false,
+      addCLick: '',
+      teamname:'jjjjjjj'
     }
 
     // Helper variables
@@ -123,7 +124,7 @@ class App extends Component {
       'yellow',
       'amber',
       'orange',
-      'deep-orange',
+      // url(https://image.shutterstock.com/image-photo/mountains-during-sunset-beautiful-natural-260nw-407021107.jpg),
     ]
     /*this.setState({
       theme:opts[Math.round(Math.random() * opts.length)],
@@ -194,7 +195,7 @@ class App extends Component {
   }
 
 
-  handleAddPointRect() {
+  handleAddPoint() {
     var newpoint = {
       msg: '',
       pos: {x:this.state.lastPos.x, y:this.state.lastPos.y + 100},
@@ -206,18 +207,17 @@ class App extends Component {
     this.setState({points, selected:''+(this.count - 1), lastPos:{x:this.state.lastPos.x, y:this.state.lastPos.y + 100}})
   }
 
-  handleAddPointCircle() {
-    var newpoint = {
-      msg: '',
-      pos: {x:this.state.lastPos.x, y:this.state.lastPos.y + 100},
-      outputs: {},
-    }
-    var points = this.state.points
-    points['' + this.count] = newpoint
-    this.count += 1
-    this.setState({points, selected:''+(this.count - 1), lastPos:{x:this.state.lastPos.x, y:this.state.lastPos.y + 100}})
-  }
-
+  // handleAddPointCircle() {
+  //   var newpoint = {
+  //     msg: '',
+  //     pos: {x:this.state.lastPos.x, y:this.state.lastPos.y + 100},
+  //     outputs: {},
+  //   }
+  //   var points = this.state.points
+  //   points['' + this.count] = newpoint
+  //   this.count += 1
+  //   this.setState({points, selected:''+(this.count - 1), lastPos:{x:this.state.lastPos.x, y:this.state.lastPos.y + 100}})
+  // }
 
   handleClick(id, e) {
     this.doFocus = true;
@@ -321,7 +321,7 @@ class App extends Component {
   }
 
 
-  settingsBox() {
+  settingsBox(props) {
     return (
       <div style={{position:'fixed', top:0, left:0, width:250, paddingLeft:10, opacity:0.8}}>
 
@@ -329,6 +329,12 @@ class App extends Component {
           this.state.showSettings
           ? <Card style={{marginTop:10}}>
             <CardContent>
+              <form>
+              <Typography gutterBottom variant="h4" component="h2" style={{opacity:1, color: 'red'}}>
+                {this.state.teamname}
+              </Typography>
+
+              </form>
 
               <Typography gutterBottom variant="h5" component="h2" style={{opacity:1}}>
                 Settings
@@ -337,6 +343,20 @@ class App extends Component {
               <div style={{paddingBottom:10}}>
                 <FormControl style={{width:'100%'}}>
                   <InputLabel htmlFor='backselect'>Background</InputLabel>
+                  <Select
+                    value={this.state.background}
+                    inputProps={{ name:'back select', id:'backselect'}}
+                    onChange={(e) => {
+                      this.setState({background:e.target.value})
+                    }}>
+                    {
+                      themes.map(themename => {
+                        return (
+                          <MenuItem value={themename}>{themename}</MenuItem>
+                        )
+                      })
+                    }
+                  </Select>
                   <Select
                     value={this.state.background}
                     inputProps={{ name:'back select', id:'backselect'}}
@@ -453,8 +473,8 @@ class App extends Component {
               <CardContent style={{paddingTop:0, paddingBottom:15}}>
 
                 <form onSubmit={(e) => {
-                  e.preventDefault()
-                  this.handleAddPoint()
+                  e.preventDefault() 
+                      this.handleAddPoint()                  
                   }}>
                   <TextField
                     id="msgfield"
@@ -676,33 +696,27 @@ class App extends Component {
                 var point = this.state.points[key]
 
                 return (
-                  <div>
-                    if ({var addclick == rectangle}) {
-                      <Flowpoint
-                      key={key}
-                      snap={{x:10, y:10}}
-                      style={{height:Math.max(50, Math.ceil(point.msg.length / 20) * 30)}}
-                      startPosition={point.pos}
-                      outputs={point.outputs}
-                      onClick={e => {this.handleClick(key, e)}}
-                      onTouch={e => {this.handleTouch(key)}}
-                      onDrag={pos => {
-                        var points = this.state.points;
-                        points[key].pos = pos;
-                        this.setState({points, lastPos:pos})
-                      }}>
-                      <div style={{display:'table', width:'100%', height:'100%'}}>
-                        <div style={{display:'table-cell', verticalAlign:'middle', textAlign:'center', paddingLeft:2, paddingRight:2}}>
-                          {
-                            point.msg !== '' ? point.msg : 'Click to Edit'
-                          }
-                        </div>
-                      </div>
-                    </Flowpoint>
-                      
-                    }
-                    
-                  </div>
+                        <Flowpoint
+                          key={key}
+                          snap={{x:1, y:1}}
+                          style={{height:Math.max(50, Math.ceil(point.msg.length / 200) * 30)}}
+                          startPosition={point.pos}
+                          outputs={point.outputs}
+                          onClick={e => {this.handleClick(key, e)}}
+                          onTouch={e => {this.handleTouch(key)}}
+                          onDrag={pos => {
+                            var points = this.state.points;
+                            points[key].pos = pos;
+                            this.setState({points, lastPos:pos})
+                          }}>
+                          <div style={{display:'table', width:'100%', height:'100%'}} >
+                            <div style={{display:'table-cell', verticalAlign:'middle', borderRadius:'50%' , textAlign:'center', paddingLeft:2, paddingRight:2}} >
+                              {
+                                point.msg !== '' ? point.msg : 'Click to Edit'
+                              }
+                            </div>
+                          </div>
+                        </Flowpoint>
                 )
               })
             }
@@ -717,12 +731,7 @@ class App extends Component {
           <div style={{paddingBottom:3}}>
             <Fab
               style={{background:lightBlue['A400'], color:'#ffffff', zIndex:6, boxShadow:'none'}}
-              onClick={() => {this.handleAddPointCircle()}, }>
-              <AddIcon />
-            </Fab>
-            <Fab
-              style={{background:lightBlue['A400'], color:'#ffffff', zIndex:6, boxShadow:'none'}}
-              onClick={() => {this.handleAddPointRect()}, var addclick = rectangle;}>
+              onClick={() => {this.handleAddPoint(), this.setState({addCLick: 'rectangle'})}}>
               <Crop169Icon />
             </Fab>
           </div>
@@ -730,8 +739,8 @@ class App extends Component {
             <Fab
               style={{background:indigo['A400'], color:'#ffffff', zIndex:6, boxShadow:'none'}}
               onClick={() => {
-                //var newQuery = parseToQuery(this.state.theme, this.state.variant, this.state.lineWidth, this.count, this.state.points);
-                //newQuery = ReplaceAll(newQuery, '.', 'lll')
+                // var newQuery = parseToQuery(this.state.theme, this.state.variant, this.state.lineWidth, this.count, this.state.points);
+                // newQuery = ReplaceAll(newQuery, '.', 'lll')
                 this.setState({showSaveBox: true, password: ''})
               }}>
               <LinkIcon />
@@ -774,7 +783,10 @@ class App extends Component {
       </MuiThemeProvider>
     );
   }
+  
 }
 
 
+
 ReactDOM.render(<App />, document.getElementById('root'));
+console.log(this.addCLick);
