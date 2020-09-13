@@ -7,7 +7,7 @@ import SignUp from "./SignUp";
 import { AuthProvider } from "./Auth";
 import PrivateRoute from "./PrivateRoute";
 
-const Appp = () => {
+const Apopp = () => {
   return (
     <AuthProvider>
       <Router>
@@ -21,4 +21,4 @@ const Appp = () => {
   );
 };
 
-export default Appp;
+export default Apopp;
