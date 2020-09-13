@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
 import './index.css';
+import Navigation from '../../Components/Navigation/Navigation';
 
 import { postToDB, getDB } from './DBhandler.js';
 import {
@@ -45,6 +46,7 @@ import deepPurple from '@material-ui/core/colors/deepPurple';
 import lightBlue from '@material-ui/core/colors/lightBlue';
 
 import { Flowspace, Flowpoint } from '../../src';
+import SignIn from "../../Components/SignIn/Signin";
 
 
 var htmlToImage = require('html-to-image');
@@ -673,6 +675,9 @@ class App extends Component {
   render() {
     return (
       <MuiThemeProvider theme={darktheme}>
+        <div className='mainbody'>
+          <Navigation />
+        </div>
 
         <div>
           <Flowspace
@@ -788,4 +793,3 @@ class App extends Component {
 
 
 ReactDOM.render(<App />, document.getElementById('root'));
-console.log(this.addCLick);
