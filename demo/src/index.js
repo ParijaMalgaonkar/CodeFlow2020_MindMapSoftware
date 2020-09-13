@@ -4,6 +4,7 @@ import './index.css';
 import Navigation from './Navigation';
 
 
+
 import { postToDB, getDB } from './DBhandler.js';
 import {
   themes,
@@ -46,7 +47,14 @@ import indigo from '@material-ui/core/colors/indigo';
 import deepPurple from '@material-ui/core/colors/deepPurple';
 import lightBlue from '@material-ui/core/colors/lightBlue';
 
+import Dialog from '@material-ui/core/Dialog';
+import DialogActions from '@material-ui/core/DialogActions';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogTitle from '@material-ui/core/DialogTitle';
+
 import { Flowspace, Flowpoint } from '../../src';
+import zIndex from "@material-ui/core/styles/zIndex";
 
 
 
@@ -54,9 +62,9 @@ var htmlToImage = require('html-to-image');
 
 
 
-
 // Main example
 class App extends Component {
+
 
   constructor(props) {
     super(props);
@@ -73,6 +81,7 @@ class App extends Component {
       theme: 'indigo',
       variant: 'outlined',
       background: 'white',
+      // backgroundImage: 'url('MindMap_Watermark.png')',
       arrow: 'none',
       lastPos: {x:300, y:50},
       snackShow: false,
@@ -678,12 +687,16 @@ class App extends Component {
 
   render() {
     return (
+      
       <MuiThemeProvider theme={darktheme}>
-        <div>
-          <Flowspace
+        <div >
+          <Flowspace 
+          
+          
             theme={this.state.theme}
             variant={this.state.variant}
             background={this.state.background}
+            // backgroundImage={{backgroundImage: `$url('MindMap_Watermark.png')`}}
             arrowStart={this.state.arrow === 'start' || this.state.arrow === 'both'}
             arrowEnd={this.state.arrow === 'end' || this.state.arrow === 'both'}
             getDiagramRef={ref => {this.diagramRef = ref}}
@@ -693,14 +706,16 @@ class App extends Component {
             selected={this.state.selected}
             selectedLine={this.state.selectedLine}
             onClick={() => {this.setState({ selected:null, selectedLine:null })}}
-            onLineClick={(key_a, key_b) => {this.setState({ selectedLine:{a:key_a, b:key_b} })}}>
+            onLineClick={(key_a, key_b) => {this.setState({ selectedLine:{a:key_a, b:key_b} })}}> 
+            
+
 
             {
               Object.keys(this.state.points).map(key => {
                 var point = this.state.points[key]
 
                 return (
-                        <Flowpoint
+                        <Flowpoint 
                           key={key}
                           snap={{x:1, y:1}}
                           style={{height:Math.max(50, Math.ceil(point.msg.length / 200) * 30)}}
@@ -713,18 +728,25 @@ class App extends Component {
                             points[key].pos = pos;
                             this.setState({points, lastPos:pos})
                           }}>
-                          <div style={{display:'table', width:'100%', height:'100%'}} >
+                          <div style={{display:'table'}} >
                             <div style={{display:'table-cell', verticalAlign:'middle', borderRadius:'50%' , textAlign:'center', paddingLeft:2, paddingRight:2}} >
                               {
                                 point.msg !== '' ? point.msg : 'Click to Edit'
                               }
+                              
                             </div>
                           </div>
+                        
                         </Flowpoint>
                 )
               })
             }
+             
+                        
           </Flowspace>
+          <div>
+          <h1 className="teammnamee" style={{textAlign:'center', zIndex:10}}>Team Name: {this.state.teamname}</h1>
+          </div>
         </div>
 
         {

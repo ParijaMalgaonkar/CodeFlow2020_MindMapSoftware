@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../demo/src/index.css';
 
 import Flowpoint from './Flowpoint.js';
 import { getColor, AutoGetLoc } from './Helpers.js';
@@ -59,6 +60,7 @@ export default class Flowspace extends Component {
 
 
   render() {
+    
 
     // Colors
     const theme_colors = getColor(this.props.theme || 'indigo');
@@ -269,7 +271,10 @@ export default class Flowspace extends Component {
     return (
       <div style={style} onClick={this.handleFlowspaceClick} className='flowcontainer'>
         <div style={{width:maxX, height:maxY, position:'relative', overflow:'visible'}} className='flowspace'>
-          <div ref={ref => {if (this.props.getDiagramRef) this.props.getDiagramRef(ref)}} style={{width:'100%', height:'100%', backgroundColor:background_color.p}}>
+          <div ref={ref => {if (this.props.getDiagramRef) this.props.getDiagramRef(ref)}} style={{width:'100%', height:'100%' , backgroundColor:background_color.p}}>
+          <div className="teammnamee">
+          <h1  style={{textAlign:'center', zIndex:10}}>Team Name: {this.state.teamname}</h1>
+          </div>
 
             <svg style={{width:'100%', height:'100%', position:'absolute', overflow:'visible'}} className='flowconnections'>
               <defs>
