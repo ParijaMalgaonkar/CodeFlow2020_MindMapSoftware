@@ -60,5 +60,10 @@
     "webpack-cli": "^3.2.1",
     "webpack-dev-server": "^3.11.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "react-router": "5.2.0",
+    "react": "16.13.1",
+    "firebase": "7.20.0",
+    "react-router-dom":"^5.2.0"
+  }
 }
