@@ -274,7 +274,11 @@ export default class Flowspace extends Component {
       <div style={style} onClick={this.handleFlowspaceClick} className='flowcontainer'>
         <div style={{width:maxX, height:maxY, position:'relative', overflow:'visible'}} className='flowspace'>
           <div ref={ref => {if (this.props.getDiagramRef) this.props.getDiagramRef(ref)}} style={{width:'100%', height:'100%' , backgroundColor:background_color.p}}>
-            <div className="teammnamee">
+            <div className="teammnamee1">
+              <h1 style={{textAlign:'center', opacity:0.6, color: 'blue'}}>Team Name: {(this.props.customname)}</h1>
+             <img className="watermark" src="https://i.ibb.co/hXCTdB2/Watermark.png" alt="Watermark" border="0" />
+            </div>
+            <div className="teammnamee2">
               <h1 style={{textAlign:'center', opacity:0.6, color: 'blue'}}>Team Name: {(this.props.customname)}</h1>
              <img className="watermark" src="https://i.ibb.co/hXCTdB2/Watermark.png" alt="Watermark" border="0" />
             </div>

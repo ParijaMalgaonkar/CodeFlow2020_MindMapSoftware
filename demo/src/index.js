@@ -295,17 +295,17 @@ class App extends Component {
           <CardContent>
 
             <Typography gutterBottom variant="h5" component="h2" style={{opacity:1}}>
-              Flowpoints!
+              Quantify - Parmanu se Chalu!
             </Typography>
 
             <Typography component="p">
-              A developer-friendly library for creating flowcharts and diagrams.
+              An Architect friendly Mind Mapping software, stemming from the need to pursue environmental friendly options!
               <br/><br/>
-              This is a demo for the React JS package found <a style={{color:'#29F9FF'}} href="https://www.npmjs.com/package/flowpoints">here</a>
+              This is a rough prototype of the actual product, which will include a lot of new and advances features! 
               <br/><br/>
               Here's some hints to get you started!
               <br/><br/>
-              <b>Creating new flowpoints:</b><br/>
+              <b>Creating new Node:</b><br/>
               You can create new nodes with the blue plus button in the lower right corner.
               New nodes will appear just beneath whichever node was created or moved last.
               <br/><br/>
@@ -318,11 +318,11 @@ class App extends Component {
               <br/><br/>
               <b>Changing styles:</b><br/>
               Click the settings button in the lower right corner (this info box will disappear!).
-              In the menu that shows up you'll be able to change the appearance of your flowchart. Everything in this menu should be fairly self-explanatory :)
+              In the menu that shows up you'll be able to change the appearance of your Mind-Map. Everything in this menu should be fairly self-explanatory :)
               <br/><br/>
-              <b>Sharing your work:</b><br/>
+              {/* <b>Sharing your work:</b><br/>
               You can share your current diagrams by clicking the link-button in the lower right corner.
-              When clicking this a link will be copied to your clipboard.
+              When clicking this a link will be copied to your clipboard. */}
               <br/><br/>
               <b>!!!</b>
               <br/>
@@ -678,7 +678,7 @@ class App extends Component {
       
       <MuiThemeProvider theme={darktheme}>
             {
-            this.state.teamname === '' ? this.setState({teamname: prompt('Please Enter you Team Name: ')}) : this.state.teamname
+            this.state.teamname === '' ? this.setState({teamname: prompt('Please Enter your Team Name: ')}) : this.state.teamname
             }
             {
             this.state.filename === '' ? this.setState({filename: prompt('Please Enter your MindMap Name: ')}) : this.state.filename
@@ -721,7 +721,7 @@ class App extends Component {
                             points[key].pos = pos;
                             this.setState({points, lastPos:pos})
                           }}>
-                          <div style={{display:'table'}} >
+                          <div style={{display:'table', textAlign:'center'}} >
                             <div style={{display:'table-cell', verticalAlign:'middle', borderRadius:'50%' , textAlign:'center', paddingLeft:2, paddingRight:2}} >
                               {
                                 point.msg !== '' ? point.msg : 'Click to Edit'

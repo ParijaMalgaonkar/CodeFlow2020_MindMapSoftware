@@ -18,7 +18,7 @@ code {
   background: black;
 }
 
-.teammnamee {
+.teammnamee1 {
   /* width: 10vw;
   height: 50em;
   display:flex;
@@ -27,9 +27,27 @@ code {
   align-items: center;
   align-content: center;
   z-index: -1; */
+  opacity: 0.5;
 
   position: fixed;
-  top:40px;
-  left: 600px;
+  top:200px;
+  left: 400px;
+}
+
+
+.teammnamee2 {
+  /* width: 10vw;
+  height: 50em;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  z-index: -1; */
+  opacity: 0.5;
+
+  position: fixed;
+  bottom:200px;
+  right: 400px;
 }
 

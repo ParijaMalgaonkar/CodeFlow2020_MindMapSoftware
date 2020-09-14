@@ -317,7 +317,7 @@ export default class Flowpoint extends Component {
     if (this.props.variant === 'outlined') {
       style.borderColor = this.props.selected ? c.o : c.p;
       style.borderStyle = 'solid';
-      style.borderWidth = '1px';
+      style.borderWidth = '5px';
       style.borderRadius = '5px';
     }
 
@@ -327,7 +327,7 @@ export default class Flowpoint extends Component {
       style.color = (c.t === 'light' ? '#ffffff' : '#000000')
       style.borderColor = style.backgroundColor;
       style.borderStyle = 'solid';
-      style.borderWidth = '1px';
+      style.borderWidth = '5px';
       style.borderRadius = '5px';
       style.fontWeight = 500;
     }
