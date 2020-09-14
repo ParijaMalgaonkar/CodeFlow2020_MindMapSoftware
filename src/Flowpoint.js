@@ -325,9 +325,9 @@ export default class Flowpoint extends Component {
     if (this.props.variant === 'filled') {
       style.backgroundColor = this.props.selected ? c.s : c.p;
       style.color = (c.t === 'light' ? '#ffffff' : '#000000')
-      style.borderColor = style.backgroundColor;
+      style.borderColor = 'black';
       style.borderStyle = 'solid';
-      style.borderWidth = '5px';
+      style.borderWidth = '3px';
       style.borderRadius = '5px';
       style.fontWeight = 500;
     }

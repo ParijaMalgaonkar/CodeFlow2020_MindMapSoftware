@@ -278,10 +278,10 @@ export default class Flowspace extends Component {
               <h1 style={{textAlign:'center', opacity:0.6, color: 'blue'}}>Team Name: {(this.props.customname)}</h1>
              <img className="watermark" src="https://i.ibb.co/hXCTdB2/Watermark.png" alt="Watermark" border="0" />
             </div>
-            <div className="teammnamee2">
+            {/* <div className="teammnamee2">
               <h1 style={{textAlign:'center', opacity:0.6, color: 'blue'}}>Team Name: {(this.props.customname)}</h1>
              <img className="watermark" src="https://i.ibb.co/hXCTdB2/Watermark.png" alt="Watermark" border="0" />
-            </div>
+            </div> */}
           
 
             <svg style={{width:'100%', height:'100%', position:'absolute', overflow:'visible'}} className='flowconnections'>
