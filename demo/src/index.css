@@ -19,7 +19,17 @@ code {
 }
 
 .teammnamee {
+  /* width: 10vw;
+  height: 50em;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  align-content: center;
+  z-index: -1; */
+
   position: fixed;
-  top:20px;
-  left: 200px;
+  top:40px;
+  left: 600px;
 }
+

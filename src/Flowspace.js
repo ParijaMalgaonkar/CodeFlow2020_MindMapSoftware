@@ -4,6 +4,7 @@ import '../demo/src/index.css';
 import Flowpoint from './Flowpoint.js';
 import { getColor, AutoGetLoc } from './Helpers.js';
 import {teamname} from './index.js';
+import { yellow } from '@material-ui/core/colors';
 
 
 // Component class
@@ -274,8 +275,8 @@ export default class Flowspace extends Component {
         <div style={{width:maxX, height:maxY, position:'relative', overflow:'visible'}} className='flowspace'>
           <div ref={ref => {if (this.props.getDiagramRef) this.props.getDiagramRef(ref)}} style={{width:'100%', height:'100%' , backgroundColor:background_color.p}}>
             <div className="teammnamee">
-              <h1  style={{textAlign:'center', zIndex:10}}>Team Name: {(this.props.customname)}</h1>
-              <a href="https://ibb.co/4sJ0S84"><img src="https://i.ibb.co/hXCTdB2/Watermark.png" alt="Watermark" border="0" /></a>
+              <h1 style={{textAlign:'center', opacity:0.6, color: 'blue'}}>Team Name: {(this.props.customname)}</h1>
+              <a href="https://ibb.co/4sJ0S84"><img className="watermark" src="https://i.ibb.co/hXCTdB2/Watermark.png" alt="Watermark" border="0" /></a>
             </div>
           
 
