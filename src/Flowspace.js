@@ -276,7 +276,7 @@ export default class Flowspace extends Component {
           <div ref={ref => {if (this.props.getDiagramRef) this.props.getDiagramRef(ref)}} style={{width:'100%', height:'100%' , backgroundColor:background_color.p}}>
             <div className="teammnamee">
               <h1 style={{textAlign:'center', opacity:0.6, color: 'blue'}}>Team Name: {(this.props.customname)}</h1>
-              <a href="https://ibb.co/4sJ0S84"><img className="watermark" src="https://i.ibb.co/hXCTdB2/Watermark.png" alt="Watermark" border="0" /></a>
+             <img className="watermark" src="https://i.ibb.co/hXCTdB2/Watermark.png" alt="Watermark" border="0" />
             </div>
           
 

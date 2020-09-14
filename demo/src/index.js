@@ -347,7 +347,7 @@ class App extends Component {
             <CardContent>
               <form>
               <Typography gutterBottom variant="h4" component="h2" style={{opacity:1, color: 'red'}}>
-                {this.state.teamname}
+                {this.state.filename}
               </Typography>
 
               </form>
@@ -681,7 +681,7 @@ class App extends Component {
             this.state.teamname === '' ? this.setState({teamname: prompt('Please Enter you Team Name: ')}) : this.state.teamname
             }
             {
-            this.state.filename === '' ? this.setState({filename: prompt('Please Enter you File Name: ')}) : this.state.filename
+            this.state.filename === '' ? this.setState({filename: prompt('Please Enter your MindMap Name: ')}) : this.state.filename
             }
           <Flowspace 
           
