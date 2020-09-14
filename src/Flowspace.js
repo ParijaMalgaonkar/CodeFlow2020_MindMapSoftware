@@ -274,6 +274,7 @@ export default class Flowspace extends Component {
           <div ref={ref => {if (this.props.getDiagramRef) this.props.getDiagramRef(ref)}} style={{width:'100%', height:'100%' , backgroundColor:background_color.p}}>
           <div className="teammnamee">
           <h1  style={{textAlign:'center', zIndex:10}}>Team Name: {this.state.teamname}</h1>
+          <img src="MindMap_Watermark.png" />
           </div>
 
             <svg style={{width:'100%', height:'100%', position:'absolute', overflow:'visible'}} className='flowconnections'>

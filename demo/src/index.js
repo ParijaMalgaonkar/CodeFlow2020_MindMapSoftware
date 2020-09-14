@@ -59,6 +59,7 @@ import zIndex from "@material-ui/core/styles/zIndex";
 
 
 var htmlToImage = require('html-to-image');
+var teamm;
 
 
 
@@ -91,7 +92,7 @@ class App extends Component {
       testmsg: 'thisisatesttoverifydecryption',
       showSaveBox: false,
       addCLick: '',
-      teamname:''
+      teamname: teamm
     }
 
     // Helper variables
@@ -689,14 +690,9 @@ class App extends Component {
     return (
       
       <MuiThemeProvider theme={darktheme}>
-        <div>
-        {
-              this.state.teamname = '' ? this.setState({teamname: prompt('Please Enter your Name')}) : this.state.teamname
+            {
+              this.state.teamname = '' ? teamm = prompt('Please Enter your Name') : this.state.teamname
             }
-        </div>
-
-            
-
           <Flowspace 
           
           
