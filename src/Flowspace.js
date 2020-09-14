@@ -272,10 +272,11 @@ export default class Flowspace extends Component {
       <div style={style} onClick={this.handleFlowspaceClick} className='flowcontainer'>
         <div style={{width:maxX, height:maxY, position:'relative', overflow:'visible'}} className='flowspace'>
           <div ref={ref => {if (this.props.getDiagramRef) this.props.getDiagramRef(ref)}} style={{width:'100%', height:'100%' , backgroundColor:background_color.p}}>
-          <div className="teammnamee">
-          <h1  style={{textAlign:'center', zIndex:10}}>Team Name: {this.state.teamname}</h1>
-          <img src="MindMap_Watermark.png" />
-          </div>
+            <div className="teammnamee">
+              <h1  style={{textAlign:'center', zIndex:10}}>{this.state.teamname}</h1>
+              <a href="https://ibb.co/4sJ0S84"><img src="https://i.ibb.co/hXCTdB2/Watermark.png" alt="Watermark"  /></a>
+            </div>
+          
 
             <svg style={{width:'100%', height:'100%', position:'absolute', overflow:'visible'}} className='flowconnections'>
               <defs>

@@ -92,7 +92,8 @@ class App extends Component {
       testmsg: 'thisisatesttoverifydecryption',
       showSaveBox: false,
       addCLick: '',
-      teamname: teamm
+      teamname: '',
+      filename: ''
     }
 
     // Helper variables
@@ -358,20 +359,6 @@ class App extends Component {
               <div style={{paddingBottom:10}}>
                 <FormControl style={{width:'100%'}}>
                   <InputLabel htmlFor='backselect'>Background</InputLabel>
-                  <Select
-                    value={this.state.background}
-                    inputProps={{ name:'back select', id:'backselect'}}
-                    onChange={(e) => {
-                      this.setState({background:e.target.value})
-                    }}>
-                    {
-                      themes.map(themename => {
-                        return (
-                          <MenuItem value={themename}>{themename}</MenuItem>
-                        )
-                      })
-                    }
-                  </Select>
                   <Select
                     value={this.state.background}
                     inputProps={{ name:'back select', id:'backselect'}}
@@ -691,7 +678,10 @@ class App extends Component {
       
       <MuiThemeProvider theme={darktheme}>
             {
-              this.state.teamname = '' ? teamm = prompt('Please Enter your Name') : this.state.teamname
+            this.state.teamname == '' ? this.setState({teamname: prompt('Please Enter you Team Name: ')}) : this.state.teamname
+            }
+            {
+            this.state.filename == '' ? this.setState({filename: prompt('Please Enter you File Name: ')}) : this.state.filename
             }
           <Flowspace 
           
@@ -747,10 +737,6 @@ class App extends Component {
              
                         
           </Flowspace>
-          {/* <div>
-          <h1 className="teammnamee" style={{textAlign:'center', zIndex:10}}>Team Name: {this.state.teamname}</h1>
-          </div>
-        </div> */}
 
         {
           this.state.showInfobox ? this.infoBox() : this.settingsBox()
