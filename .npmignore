@@ -1,7 +1,0 @@
-# npmignore
-src
-demo
-assets
-.babelrc
-.gitignore
-webpack.config.js
