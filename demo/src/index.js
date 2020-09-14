@@ -678,14 +678,14 @@ class App extends Component {
       
       <MuiThemeProvider theme={darktheme}>
             {
-            this.state.teamname == '' ? this.setState({teamname: prompt('Please Enter you Team Name: ')}) : this.state.teamname
+            this.state.teamname === '' ? this.setState({teamname: prompt('Please Enter you Team Name: ')}) : this.state.teamname
             }
             {
-            this.state.filename == '' ? this.setState({filename: prompt('Please Enter you File Name: ')}) : this.state.filename
+            this.state.filename === '' ? this.setState({filename: prompt('Please Enter you File Name: ')}) : this.state.filename
             }
           <Flowspace 
           
-          
+            customname={this.state.teamname}
             theme={this.state.theme}
             variant={this.state.variant}
             background={this.state.background}
