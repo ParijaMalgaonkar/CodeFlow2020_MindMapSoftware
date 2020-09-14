@@ -689,7 +689,14 @@ class App extends Component {
     return (
       
       <MuiThemeProvider theme={darktheme}>
-        <div >
+        <div>
+        {
+              this.state.teamname = '' ? this.setState({teamname: prompt('Please Enter your Name')}) : this.state.teamname
+            }
+        </div>
+
+            
+
           <Flowspace 
           
           
@@ -744,10 +751,10 @@ class App extends Component {
              
                         
           </Flowspace>
-          <div>
+          {/* <div>
           <h1 className="teammnamee" style={{textAlign:'center', zIndex:10}}>Team Name: {this.state.teamname}</h1>
           </div>
-        </div>
+        </div> */}
 
         {
           this.state.showInfobox ? this.infoBox() : this.settingsBox()
