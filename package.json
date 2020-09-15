@@ -28,9 +28,6 @@
     "flowchart",
     "javascript"
   ],
-  "bugs": {
-    "url": "https://github.com/mariusbrataas/flowpoints/issues"
-  },
   "homepage": "http://ParijaMalgaonkar.github.io/CodeFlow2020_MindMapSoftware",
   "peerDependencies": {
     "react": "^16.3.0",
